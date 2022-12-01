@@ -1,0 +1,24 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    height: var(--header-height);
+    background-color: var(--primary);
+}
+
+.inner {
+    display: flex;
+
+    height: 100%;
+    padding: 0 var(--horizontal-width-default);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-right: 15px;
+    img {
+        width: 131px;
+    }
+}
