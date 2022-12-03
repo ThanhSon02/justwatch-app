@@ -1,21 +1,11 @@
-import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
-import styles from './SaerchResult.module.scss';
+import SearchResultNoInput from './SearchResultNoInput/SearchResultNoInput';
 
-const cx = classNames.bind(styles);
-
-function SearchResult({ title, highlight = false, mb15 = false, children }) {
+function SearchResult() {
     return (
-        <div>
-            <span className={cx('search-result-title', { highlight, mb15 })}>{title}</span>
-            <div className={cx('result')}>{children}</div>
-        </div>
+        <>
+            <SearchResultNoInput />
+        </>
     );
 }
-
-SearchResult.prototype = {
-    title: PropTypes.string.isRequired,
-    childen: PropTypes.node,
-};
 
 export default SearchResult;

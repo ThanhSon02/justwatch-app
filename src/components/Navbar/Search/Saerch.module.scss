@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    z-index: 10;
 }
 
 .search-icon {
@@ -39,17 +40,28 @@
 .search-suggest {
     position: absolute;
     left: 0;
-    top: 38px;
+    top: 44px;
     width: 100%;
-    border-radius: 0 0 10px 10px;
+    padding: 0 8px;
     color: #fff;
-    background-color: #10161d;
 }
 
 .search-suggest__container {
-    padding: 24px;
+    position: relative;
+    color: #8c8c8c;
+    background-color: #10161d;
+    border-radius: 4px 4px 10px 10px;
+    z-index: 10;
+}
 
-    &:nth-child(1) {
-        color: #8c8c8c;
-    }
+// Overlay
+
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
