@@ -5,5 +5,17 @@
     justify-items: center;
     font-size: 1.4rem;
     text-decoration: none;
-    margin: 0 15px;
+
+    span {
+        padding: 18px 15px;
+    }
+
+    &:hover {
+        color: #d5d5d5;
+    }
+}
+
+.active {
+    color: var(--text-color-active) !important;
+    font-weight: 700;
 }
