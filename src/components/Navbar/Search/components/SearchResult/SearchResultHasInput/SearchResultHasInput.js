@@ -30,9 +30,27 @@ function SearchResultHasInput() {
                     </div>
                 </div>
             </div>
+
             <div className={cx('suggest-result-item')}>
                 <span className={cx('suggest-result-title')}>PEOPLE</span>
-                <div className={cx('suggest-result')}></div>
+                <div className={cx('result-list')}>
+                    <div className={cx('result-item')}>
+                        <div className={cx('result-actor-img')}>
+                            <img src={images.noImage} alt="" />
+                        </div>
+                        <div className={cx('details')}>
+                            <h4 className={cx('name')}>a</h4>
+                        </div>
+                    </div>
+                    <div className={cx('result-item')}>
+                        <div className={cx('result-actor-img')}>
+                            <img src={images.noImage} alt="" />
+                        </div>
+                        <div className={cx('details')}>
+                            <h4 className={cx('name')}>A</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

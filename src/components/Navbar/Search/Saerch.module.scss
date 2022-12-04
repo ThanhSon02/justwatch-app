@@ -65,3 +65,11 @@
     background-color: rgba(0, 0, 0, 0.5);
     cursor: pointer;
 }
+
+// Clear button
+.clear {
+    position: absolute;
+    right: 13px;
+    font-size: 2rem;
+    color: var(--white);
+}

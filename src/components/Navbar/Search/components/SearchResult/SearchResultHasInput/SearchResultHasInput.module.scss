@@ -37,7 +37,10 @@
     display: flex;
     align-items: center;
     border-radius: 7px;
+    height: 75px;
     margin-bottom: 16px;
+    margin-left: -5px;
+    padding: 5px;
     &:hover {
         background-color: #1c252f;
     }
@@ -45,9 +48,7 @@
 
 .result-img {
     width: 45px;
-    height: 75px;
-    padding: 5px;
-    margin-left: -5px;
+    height: 100%;
     margin-right: 22px;
 
     img {
@@ -73,8 +74,20 @@
 .name {
     color: var(--white);
     font-size: 1.8rem;
+    font-weight: 400;
 }
 
 .info {
     font-size: 14px;
+}
+
+// Search result actor
+.result-actor-img {
+    width: 75px;
+    height: 100%;
+
+    img {
+        height: 100%;
+        padding: 5px;
+    }
 }

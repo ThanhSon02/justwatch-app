@@ -5,17 +5,25 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import SearchResultNoInput from '~/components/Navbar/Search/components/SearchResult';
 import SearchResultHasInput from './components/SearchResult/SearchResultHasInput/SearchResultHasInput';
+import ClearButton from './components/ClearButton';
 
 const cx = classNames.bind(styles);
 
 function Search({ placeholder = 'Search for movies or TV shows' }) {
     const [searchValue, setSearchValue] = useState('');
     const [showSearchSuggest, setShowSearchSuggest] = useState(false);
+    const [showClearIcon, setShowClearIcon] = useState(false);
+
     const inputRef = useRef();
 
-    const handleShowSearchSuggest = () => {
+    const handleFocusInput = () => {
         setShowSearchSuggest(true);
-        inputRef.current.styles();
+    };
+
+    const handleClear = () => {
+        if (searchValue) {
+            setShowClearIcon(true);
+        }
     };
 
     return (
@@ -27,15 +35,19 @@ function Search({ placeholder = 'Search for movies or TV shows' }) {
                     value={searchValue}
                     placeholder={placeholder}
                     className={cx('search-input')}
-                    onFocus={handleShowSearchSuggest}
-                    onChange={(e) => setSearchValue(e.target.value)}
+                    onFocus={handleFocusInput}
+                    onChange={(e) => {
+                        setSearchValue(e.target.value);
+                        searchValue ? setShowClearIcon(true) : setShowClearIcon(false);
+                    }}
                 />
+                {searchValue ? <ClearButton className={cx('clear')} /> : <></>}
             </div>
 
             {showSearchSuggest ? (
-                <div className={cx('search-suggest')}>
+                <div className={cx('search-suggest')} onClick={() => setShowClearIcon(false)}>
                     <div className={cx('search-suggest__container')}>
-                        {searchValue ? <SearchResultHasInput /> : <SearchResultNoInput />}
+                        {searchValue ? <SearchResultHasInput /> : <SearchResultNoInput onClick={handleClear} />}
                     </div>
                     <div className={cx('search-overlay')} onClick={() => setShowSearchSuggest(false)}></div>
                 </div>

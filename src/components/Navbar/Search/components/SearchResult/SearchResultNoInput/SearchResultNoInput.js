@@ -14,6 +14,15 @@ function SearchResultNoInput() {
                 <span className={cx('search-result-title', 'highlight', 'mb15')}>Trending Searches</span>
                 <div className={cx('result')}>
                     <ButtonSearchSuggest title={'Wednesday'} />
+                    <ButtonSearchSuggest title={'Khakee: The Bihar Chapter'} />
+                    <ButtonSearchSuggest title={'Bigg Boss'} />
+                    <ButtonSearchSuggest title={'College Romance'} />
+                    <ButtonSearchSuggest title={'Love Today'} />
+                    <ButtonSearchSuggest title={'Mirzapur'} />
+                    <ButtonSearchSuggest title={'The Peripheral'} />
+                    <ButtonSearchSuggest title={'Vadhandhi'} />
+                    <ButtonSearchSuggest title={'Kantara'} />
+                    <ButtonSearchSuggest title={'Modern Family'} />
                 </div>
             </div>
         </div>
