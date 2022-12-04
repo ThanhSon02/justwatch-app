@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
 :root {
-    --primary: #060d17;
+    --primary: #fbc500;
+    --background-color: #060d17;
     --text-color: #999c9f;
     --white: #fff;
     --black: #000;
@@ -25,4 +26,5 @@ html {
 
 body {
     font-family: 'Lato', sans-serif;
+    overflow-y: scroll;
 }
