@@ -7,7 +7,7 @@ import NavExtra from './NavExtra';
 
 const cx = classNames.bind(styles);
 
-function Navbar() {
+function Navbar({ onClickMenu }) {
     return (
         <nav className={cx('wrapper')}>
             <ButtonLink to={config.routes.home} title="Home" />
@@ -16,7 +16,7 @@ function Navbar() {
             <ButtonLink to={config.routes.watchlist} title="Watchlist" />
             <ButtonLink to={config.routes.watchlist} title="Sports" />
             <Search />
-            <NavExtra className={cx('nav-extra')} />
+            <NavExtra className={cx('nav-extra')} onClickMenu={onClickMenu} />
         </nav>
     );
 }

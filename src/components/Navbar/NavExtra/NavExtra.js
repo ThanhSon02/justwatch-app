@@ -5,7 +5,7 @@ import { faBars, faUserGear } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-function NavExtra({ className, isLogin = false }) {
+function NavExtra({ className, isLogin = false, onClickMenu }) {
     return (
         <div className={className}>
             {isLogin ? (
@@ -24,7 +24,7 @@ function NavExtra({ className, isLogin = false }) {
                 </div>
             )}
             <div className={cx('memu')}>
-                <button className={cx('menu-btn')}>
+                <button className={cx('menu-btn')} onClick={onClickMenu}>
                     <FontAwesomeIcon icon={faBars} className={cx('menu-icon')} />
                 </button>
             </div>

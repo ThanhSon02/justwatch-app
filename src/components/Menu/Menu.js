@@ -5,9 +5,9 @@ import config from '~/config';
 
 const cx = classNames.bind(styles);
 
-function Menu() {
+function Menu({ handleMenu }) {
     return (
-        <div className={cx('overlay')}>
+        <div className={cx('overlay')} onClick={handleMenu}>
             <div className={cx('menu-box')}>
                 <div className={cx('menu-list')}>
                     <MenuItem to={config.routes.yourtv} data={'Connect your TV'} />
