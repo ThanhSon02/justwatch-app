@@ -1,5 +1,6 @@
 .wrapper {
     display: flex;
+    position: relative;
     align-items: center;
     height: var(--header-height);
     background-color: var(--background-color);
@@ -21,4 +22,9 @@
     img {
         width: 131px;
     }
+}
+
+// menu
+.menu {
+    position: fixed;
 }

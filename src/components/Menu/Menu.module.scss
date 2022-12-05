@@ -1,0 +1,44 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 12;
+    cursor: pointer;
+}
+
+.menu-box {
+    position: absolute;
+    top: 34px;
+    right: 0;
+    width: 250px;
+    background-color: #060d17;
+    border-radius: 4px;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 8px 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #8a8d98;
+    padding: 0 16px;
+    font-size: 1.6rem;
+    min-height: 48px;
+    text-decoration: none;
+    &:hover {
+        color: #d5d5d5;
+        background-color: #090f1a;
+    }
+}
