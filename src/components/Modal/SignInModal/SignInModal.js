@@ -16,13 +16,43 @@ import Button2 from '~/components/Button2';
 
 const cx = classNames.bind(styles);
 
-function SignInModal() {
+function SignInModal({ showModal }) {
+    const CreateAccountDetail = [
+        {
+            text: 'Sync with our TV app',
+            icon: <FontAwesomeIcon icon={faCircleChevronRight} />,
+        },
+        {
+            text: 'Your watchlist on all devices',
+            icon: <FontAwesomeIcon icon={faCircleChevronRight} />,
+        },
+    ];
+
+    const CountryDetail = [
+        {
+            text: 'India',
+        },
+    ];
+
+    const LanguageDetail = [
+        {
+            text: 'English',
+        },
+    ];
+
+    const StreamServicesDetail = [
+        {
+            text: 'Netflix',
+        },
+    ];
+
     return (
-        <div className={cx('overlay')}>
+        <div className={cx('wrapper')}>
+            <div className={cx('overlay')} onClick={showModal}></div>
             <div className={cx('modal')}>
                 <div className={cx('title')}>
                     JustWatch Account
-                    <span className={cx('icon-wrapper')}>
+                    <span className={cx('close-icon')} onClick={showModal}>
                         <FontAwesomeIcon icon={faXmark} className={cx('icon')} />
                     </span>
                 </div>
@@ -36,8 +66,7 @@ function SignInModal() {
                     <Button
                         leftIcon={<FontAwesomeIcon icon={faUserPlus} />}
                         rightIcon={<Button2 />}
-                        detailIcon={<FontAwesomeIcon icon={faCircleChevronRight} />}
-                        detail
+                        details={CreateAccountDetail}
                     >
                         Create an account
                     </Button>
@@ -47,6 +76,7 @@ function SignInModal() {
                             rightIcon={<FontAwesomeIcon icon={faAngleRight} />}
                             small={true}
                             nonActive={true}
+                            details={CountryDetail}
                         >
                             Country
                         </Button>
@@ -55,15 +85,17 @@ function SignInModal() {
                             rightIcon={<FontAwesomeIcon icon={faAngleRight} />}
                             small={true}
                             nonActive={true}
+                            details={LanguageDetail}
                         >
-                            Country
+                            Language
                         </Button>
                     </div>
                     <Button
                         leftIcon={<FontAwesomeIcon icon={faPlay} />}
                         rightIcon={<FontAwesomeIcon icon={faAngleRight} />}
                         nonActive={true}
-                        detail
+                        fontSmall={true}
+                        details={StreamServicesDetail}
                     >
                         My streaming service
                     </Button>

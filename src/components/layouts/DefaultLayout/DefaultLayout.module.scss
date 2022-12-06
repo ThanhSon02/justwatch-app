@@ -1,7 +1,7 @@
 .wrapper {
+    max-width: var(--max-width-default);
 }
 
 .container {
-    width: var(--max-width-default);
-    padding: 0 var(--horizontal-width-default);
+    width: 100%;
 }

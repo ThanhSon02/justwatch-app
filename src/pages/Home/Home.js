@@ -1,5 +1,37 @@
+import classNames from 'classnames/bind';
+import styles from './Home.module.scss';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
+import { roundArrow } from 'tippy.js';
+import 'tippy.js/dist/svg-arrow.css';
+import 'tippy.js/themes/translucent.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRotateRight } from '@fortawesome/free-solid-svg-icons';
+
+const cx = classNames.bind(styles);
+
 function Home() {
-    return <h1>Home Page</h1>;
+    return (
+        <div className={cx('wrapper')}>
+            <div className={cx('hero')}>
+                <h1 className={cx('title')}>
+                    Movies and TV shows for you
+                    <Tippy
+                        duration={0}
+                        offset={[0, -2]}
+                        theme="translucent"
+                        animation="scale-exteme"
+                        placement="bottom"
+                        content="Give me new recomendations"
+                    >
+                        <div className={cx('icon')}>
+                            <FontAwesomeIcon icon={faArrowRotateRight} />
+                        </div>
+                    </Tippy>
+                </h1>
+            </div>
+        </div>
+    );
 }
 
 export default Home;

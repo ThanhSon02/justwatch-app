@@ -1,3 +1,14 @@
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .overlay {
     position: fixed;
     top: 0;
@@ -8,7 +19,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.2);
-    z-index: 12;
+    z-index: 11;
     cursor: pointer;
 }
 
@@ -19,7 +30,7 @@
     border-radius: 16px;
     background-color: var(--background-color);
     overflow: hidden;
-    z-index: 0;
+    z-index: 12;
 }
 
 .title {
@@ -34,7 +45,7 @@
     z-index: 10;
 }
 
-.icon-wrapper {
+.close-icon {
     display: flex;
     justify-content: center;
     align-items: center;

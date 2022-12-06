@@ -3,6 +3,7 @@ const routes = {
     new: '/new',
     popular: '/popular',
     watchlist: '/watch-list',
+    sports: '/sports',
     yourtv: '/your-tv',
     apps: '/apps',
     aboutus: '/about-us',

@@ -1,0 +1,28 @@
+.wrapper {
+    padding: 0 var(--horizontal-width-default);
+    background-color: var(--background-color);
+    height: 500px;
+}
+
+.hero {
+    padding-top: 8px;
+}
+
+.title {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-size: 4rem;
+    line-height: 4.8rem;
+    padding: 8px 0;
+}
+
+.icon {
+    font-size: 2.6rem;
+    color: #4c5a67;
+    margin: 8px 0 0 10px;
+    &:hover {
+        color: var(--white);
+    }
+}

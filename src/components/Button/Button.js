@@ -6,8 +6,8 @@ const cx = classNames.bind(styles);
 function Button({
     leftIcon,
     rightIcon,
-    detailIcon,
-    detail,
+    details = [],
+    fontSmall = false,
     small = false,
     large = false,
     nonActive = false,
@@ -17,23 +17,22 @@ function Button({
         small,
         large,
         nonActive,
+        fontSmall,
     });
     return (
         <button className={classes}>
             {leftIcon && <span className={cx('left-icon')}>{leftIcon}</span>}
             <span className={cx('title')}>
                 {children}
-                {detail ? (
+                {details ? (
                     <span className={cx('detail')}>
                         <ul className={cx('detail-list')}>
-                            <li className={cx('detail-item')}>
-                                <span className={cx('detail-icon')}>{detailIcon}</span>
-                                Sync with our TV app
-                            </li>
-                            <li className={cx('detail-item')}>
-                                <span className={cx('detail-icon')}>{detailIcon}</span>
-                                Your watchlist on all devices
-                            </li>
+                            {details.map((detail, index) => (
+                                <li key={index} className={cx('detail-item')}>
+                                    {detail.icon ? <span className={cx('detail-icon')}>{detail.icon}</span> : <></>}
+                                    {detail.text}
+                                </li>
+                            ))}
                         </ul>
                     </span>
                 ) : (

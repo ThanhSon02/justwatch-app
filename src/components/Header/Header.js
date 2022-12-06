@@ -13,11 +13,20 @@ const cx = classNames.bind(styles);
 
 function Header() {
     const [showMenu, setShowMenu] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const handleShowMenu = () => {
         if (showMenu) {
             setShowMenu(false);
         } else {
             setShowMenu(true);
+        }
+    };
+
+    const handleShowModal = () => {
+        if (showModal) {
+            setShowModal(false);
+        } else {
+            setShowModal(true);
         }
     };
 
@@ -27,9 +36,9 @@ function Header() {
                 <Link to={config.routes.home} className={cx('logo')}>
                     <img src={images.logo} alt="logo" />
                 </Link>
-                <Navbar onClickMenu={handleShowMenu} />
+                <Navbar onClickMenu={handleShowMenu} showModal={handleShowModal} />
                 {showMenu ? <Menu className={cx('menu')} handleMenu={handleShowMenu} /> : <></>}
-                <SignInModal className={cx('signin-modal')} />
+                {showModal ? <SignInModal className={cx('signin-modal')} showModal={handleShowModal} /> : <></>}
             </div>
         </header>
     );

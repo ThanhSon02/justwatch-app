@@ -5,19 +5,19 @@ import { faBars, faUserGear } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-function NavExtra({ className, isLogin = false, onClickMenu }) {
+function NavExtra({ className, isLogin = false, onClickMenu, showModal }) {
     return (
         <div className={className}>
             {isLogin ? (
                 <div className={cx('user')}>
-                    <button className={cx('user-btn')}>
+                    <button className={cx('user-btn')} onClick={showModal}>
                         <FontAwesomeIcon icon={faUserGear} className={cx('user-icon')} />
                     </button>
                 </div>
             ) : (
                 <div className={cx('sign-in')}>
                     <div>
-                        <button className={cx('sign-in__btn')}>
+                        <button className={cx('sign-in__btn')} onClick={showModal}>
                             <span>Sign In</span>
                         </button>
                     </div>
