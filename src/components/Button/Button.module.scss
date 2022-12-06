@@ -1,5 +1,4 @@
 .wrapper {
-    color: #fff;
     width: 100%;
     display: flex;
     align-items: center;
@@ -8,14 +7,19 @@
     font-family: var(--font-family);
     padding: 20px;
     border-radius: 16px;
-    background-color: #1c252f;
     border: 1px solid #1c252f;
+    color: #fff;
+    background-color: #1c252f;
     transition: background-color 0.1s ease-in;
     margin-bottom: 15px;
     cursor: pointer;
 
     &:hover {
         background-color: transparent;
+
+        .left-icon {
+            background-color: #5e6b76;
+        }
     }
 }
 
@@ -37,5 +41,51 @@
 }
 
 .title {
+    text-align: left;
     margin: 0 20px;
+}
+
+// None Active Button
+.nonActive {
+    background-color: transparent;
+    &:hover {
+        background-color: #1c252f;
+        .left-icon {
+            background-color: var(--white);
+        }
+    }
+
+    .left-icon {
+        background-color: #5e6b76;
+    }
+}
+
+// details
+.detail {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #999c9f;
+    margin-top: 8px;
+}
+
+.detail-list {
+    list-style: none;
+}
+
+.detail-item {
+    line-height: 21px;
+}
+
+.detail-icon {
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+
+// button size
+.small {
+    max-width: 48%;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    font-weight: 400;
 }

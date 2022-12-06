@@ -1,8 +1,18 @@
 import classNames from 'classnames/bind';
-import Button from '~/components/Button';
 import styles from './SignInModal.module.scss';
+import Button from '~/components/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark, faUser, faAngleRight, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+    faXmark,
+    faUser,
+    faAngleRight,
+    faUserPlus,
+    faCircleChevronRight,
+    faEarthAmericas,
+    faLanguage,
+    faPlay,
+} from '@fortawesome/free-solid-svg-icons';
+import Button2 from '~/components/Button2';
 
 const cx = classNames.bind(styles);
 
@@ -25,9 +35,37 @@ function SignInModal() {
                     </Button>
                     <Button
                         leftIcon={<FontAwesomeIcon icon={faUserPlus} />}
-                        rightIcon={<FontAwesomeIcon icon={faAngleRight} />}
+                        rightIcon={<Button2 />}
+                        detailIcon={<FontAwesomeIcon icon={faCircleChevronRight} />}
+                        detail
                     >
                         Create an account
+                    </Button>
+                    <div className={cx('splitted')}>
+                        <Button
+                            leftIcon={<FontAwesomeIcon icon={faEarthAmericas} />}
+                            rightIcon={<FontAwesomeIcon icon={faAngleRight} />}
+                            small={true}
+                            nonActive={true}
+                        >
+                            Country
+                        </Button>
+                        <Button
+                            leftIcon={<FontAwesomeIcon icon={faLanguage} />}
+                            rightIcon={<FontAwesomeIcon icon={faAngleRight} />}
+                            small={true}
+                            nonActive={true}
+                        >
+                            Country
+                        </Button>
+                    </div>
+                    <Button
+                        leftIcon={<FontAwesomeIcon icon={faPlay} />}
+                        rightIcon={<FontAwesomeIcon icon={faAngleRight} />}
+                        nonActive={true}
+                        detail
+                    >
+                        My streaming service
                     </Button>
                 </div>
             </div>
