@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 function Home() {
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('hero')}>
+            <div className={cx('hero-text')}>
                 <h1 className={cx('title')}>
                     Movies and TV shows for you
                     <Tippy
