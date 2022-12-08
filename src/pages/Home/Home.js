@@ -2,11 +2,11 @@ import classNames from 'classnames/bind';
 import styles from './Home.module.scss';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import { roundArrow } from 'tippy.js';
 import 'tippy.js/dist/svg-arrow.css';
 import 'tippy.js/themes/translucent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRotateRight } from '@fortawesome/free-solid-svg-icons';
+import HeroProvider from '~/components/HeroProvider';
 
 const cx = classNames.bind(styles);
 
@@ -29,6 +29,9 @@ function Home() {
                         </div>
                     </Tippy>
                 </h1>
+            </div>
+            <div className={cx('hero-provider')}>
+                <HeroProvider />
             </div>
         </div>
     );
