@@ -7,6 +7,7 @@ import 'tippy.js/themes/translucent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRotateRight } from '@fortawesome/free-solid-svg-icons';
 import HeroProvider from '~/components/HeroProvider';
+import Category from '~/components/Category';
 
 const cx = classNames.bind(styles);
 
@@ -31,7 +32,10 @@ function Home() {
                 </h1>
             </div>
             <div className={cx('hero-provider')}>
-                <HeroProvider />
+                <HeroProvider small={true} />
+            </div>
+            <div className={cx('category-section')}>
+                <Category />
             </div>
         </div>
     );

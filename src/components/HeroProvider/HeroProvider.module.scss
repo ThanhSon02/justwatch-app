@@ -3,7 +3,8 @@
     position: relative;
     align-items: center;
 
-    &:hover .btn-next {
+    &:hover .btn-next,
+    .btn-prev {
         display: flex !important;
     }
 }
@@ -12,6 +13,7 @@
     display: flex;
     align-items: center;
     list-style: none;
+    overflow: hidden;
 }
 
 .provider-item {
@@ -32,7 +34,8 @@
     border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-.btn-next {
+.btn-next,
+.btn-prev {
     display: none;
     position: absolute;
     align-items: center;
@@ -46,5 +49,16 @@
 
     &:hover {
         color: #d5d5d5;
+    }
+}
+
+.btn-prev {
+    left: 0;
+}
+
+.small {
+    img {
+        width: 32px;
+        height: 32px;
     }
 }

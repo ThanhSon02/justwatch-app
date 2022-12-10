@@ -1,0 +1,145 @@
+.wrapper {
+    padding: 25px 0 16px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+    font-size: 2.4rem;
+    text-transform: none;
+    line-height: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.category-list {
+    display: flex;
+    position: relative;
+    list-style: none;
+    min-height: 236px;
+}
+
+.category-item {
+    position: relative;
+    width: 190px;
+    height: 100%;
+    margin: 0 5px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:hover .quick-action {
+        display: flex;
+    }
+}
+
+.quick-action {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: var(--white);
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.action-top {
+    display: flex;
+    justify-content: space-between;
+    color: var(--white);
+    padding: 5px;
+    width: 100%;
+}
+
+.action-top__icon {
+    font-size: 1.2rem;
+    margin: 5px;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(16, 22, 29, 0.7);
+    border-radius: 50%;
+}
+
+.action-bottom {
+    padding: 5px;
+}
+
+.imdb-more {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.imdb {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    height: 20px;
+
+    img {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+    }
+}
+
+.more-like-this {
+    background: rgba(16, 22, 29, 0.8);
+    color: var(--white);
+    font-size: 1.4rem;
+    height: 30px;
+    line-height: 2rem;
+    padding: 5px 8px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.watch-now {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    width: 100%;
+    font-weight: 700;
+    background-color: #fbc500;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    padding: 7.5px 15px;
+
+    img {
+        width: 20px;
+        height: 20px;
+        margin-right: 4px;
+    }
+}
+
+.badge {
+    position: absolute;
+    color: #8a8d98;
+    font-size: 1.2rem;
+    border-radius: 2px;
+    right: 8px;
+    bottom: 8px;
+    z-index: 0;
+    text-align: end;
+    background-color: #060d17;
+    padding: 1px 5px;
+}

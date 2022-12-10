@@ -3,6 +3,9 @@ const images = {
     movie: require('~/assets/img/the-greatest-showman.png'),
     noImage: require('~/assets/img/no-actor.png'),
     plusIcon: require('~/assets/img/plus_icon.png'),
+    movieImages: require('~/assets/img/the-baby.png'),
+    imdbLogo: require('~/assets/img/imdb-logo.png'),
+    watchNowLogo: require('~/assets/img/icon.png'),
     providers: {
         netflix: require('~/assets/img/netflix.png'),
         amazoneprime: require('~/assets/img/amazoneprime.png'),
