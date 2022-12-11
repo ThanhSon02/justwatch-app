@@ -4,7 +4,7 @@
     align-items: center;
 
     &:hover .btn-next,
-    .btn-prev {
+    &:hover .btn-prev {
         display: flex !important;
     }
 }
