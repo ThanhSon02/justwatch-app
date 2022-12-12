@@ -14,7 +14,6 @@ function Navbar({ onClickMenu, showModal }) {
             <ButtonLink to={config.routes.new} title="New" />
             <ButtonLink to={config.routes.popular} title="Popular" />
             <ButtonLink to={config.routes.watchlist} title="Watchlist" />
-            <ButtonLink to={config.routes.sports} title="Sports" />
             <Search />
             <NavExtra className={cx('nav-extra')} onClickMenu={onClickMenu} showModal={showModal} />
         </nav>

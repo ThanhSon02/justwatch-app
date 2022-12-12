@@ -1,5 +1,10 @@
 .wrapper {
     padding: 25px 0 16px;
+    position: relative;
+    &:hover .btn-next,
+    &:hover .btn-prev {
+        display: flex !important;
+    }
 }
 
 .title {
@@ -19,16 +24,21 @@
     position: relative;
     list-style: none;
     min-height: 236px;
+    width: 100%;
+    overflow: hidden;
+    // overflow-x: auto;
 }
 
 .category-item {
+    display: inline-flex;
     position: relative;
     width: 190px;
     height: 100%;
     margin: 0 5px;
+    cursor: pointer;
 
     img {
-        width: 100%;
+        width: 190px;
         height: 100%;
         border-radius: 5px;
     }
@@ -40,6 +50,42 @@
     &:hover .quick-action {
         display: flex;
     }
+
+    &:hover {
+        &::after {
+            opacity: 1;
+            background: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0.6) 20%,
+                transparent 45%,
+                transparent 55%,
+                rgba(0, 0, 0, 0.6) 80%,
+                rgba(0, 0, 0, 0.6)
+            );
+        }
+    }
+}
+
+.category-item::after {
+    top: 0;
+    z-index: 4;
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s linear;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6) 20%,
+        transparent 45%,
+        transparent 55%,
+        rgba(0, 0, 0, 0.6) 80%,
+        rgba(0, 0, 0, 0.6)
+    );
 }
 
 .quick-action {
@@ -53,6 +99,7 @@
     display: none;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 5;
 }
 
 .action-top {
@@ -71,6 +118,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--white);
     background-color: rgba(16, 22, 29, 0.7);
     border-radius: 50%;
 }
@@ -109,6 +157,10 @@
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
+
+    &:hover {
+        background-color: #383d47;
+    }
 }
 
 .watch-now {
@@ -129,6 +181,10 @@
         height: 20px;
         margin-right: 4px;
     }
+
+    &:hover {
+        background-color: #fbd446;
+    }
 }
 
 .badge {
@@ -142,4 +198,28 @@
     text-align: end;
     background-color: #060d17;
     padding: 1px 5px;
+}
+
+.btn-next,
+.btn-prev {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 73px;
+    right: 0;
+    width: 40px;
+    height: calc(100% - 89px);
+    font-size: 3rem;
+    color: #78a6b8;
+    background: rgba(6, 13, 23, 0.8);
+    z-index: 10;
+
+    &:hover {
+        color: #d5d5d5;
+    }
+}
+
+.btn-prev {
+    left: 0;
 }

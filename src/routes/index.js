@@ -2,7 +2,6 @@ import Home from '~/pages/Home';
 import New from '~/pages/New';
 import Popular from '~/pages/Popular';
 import WatchList from '~/pages/WatchList';
-import Sports from '~/pages/Sports';
 import YourTV from '~/pages/YourTV';
 import Apps from '~/pages/Apps';
 import AboutUs from '~/pages/AboutUs';
@@ -30,10 +29,6 @@ const publicRoutes = [
     {
         path: '/watch-list',
         component: WatchList,
-    },
-    {
-        path: '/sports',
-        component: Sports,
     },
     {
         path: '/your-tv',

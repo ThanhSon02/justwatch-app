@@ -5,7 +5,7 @@ import { faBars, faUserGear } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
-function NavExtra({ className, isLogin = false, onClickMenu, showModal }) {
+function NavExtra({ className, isLogin = true, onClickMenu, showModal }) {
     return (
         <div className={className}>
             {isLogin ? (
