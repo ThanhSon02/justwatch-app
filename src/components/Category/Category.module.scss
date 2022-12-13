@@ -223,3 +223,34 @@
 .btn-prev {
     left: 0;
 }
+
+// tippy box
+.tippy-box.arrow-right,
+.tippy-box,
+.tippy-box.arrow-left {
+    position: relative;
+    font-size: 1.2rem;
+    padding: 3px 5px;
+    border-radius: 3px;
+    background-color: var(--white);
+}
+
+.tippy-box::after,
+.arrow-right::after,
+.arrow-left::after {
+    position: absolute;
+    content: '';
+    border-width: 6px;
+    right: 10px;
+    bottom: 18px;
+    border-style: solid;
+    border-color: transparent transparent var(--white) transparent;
+}
+
+.arrow-right::after {
+    right: 7px;
+}
+
+.arrow-left::after {
+    right: 50px;
+}

@@ -1,8 +1,10 @@
 import classNames from 'classnames/bind';
 import styles from './Category.module.scss';
 import images from '~/assets/img';
-import { SeenIcon } from '~/components/Icons';
 
+import HeadlessTippy from '@tippyjs/react/headless';
+import 'tippy.js/dist/svg-arrow.css';
+import { SeenIcon } from '~/components/Icons';
 import { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookmark, faThumbsUp, faThumbsDown, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
@@ -16,6 +18,7 @@ function Category() {
             filmList: [
                 {
                     filmImage: images.movieImages,
+                    provideImage: images.providers.netflix,
                     imdb: 6.3,
                     isTvShow: true,
                     isSeen: true,
@@ -72,22 +75,67 @@ function Category() {
                                 <li key={index} className={cx('category-item')}>
                                     <div className={cx('quick-action')}>
                                         <div className={cx('action-top')}>
-                                            <div className={cx('action-top__icon')}>
-                                                <FontAwesomeIcon icon={faBookmark} />
-                                            </div>
-                                            {filmItem.isSeen ? (
+                                            <HeadlessTippy
+                                                delay={[100, 300]}
+                                                placement="bottom-start"
+                                                render={(attrs) => (
+                                                    <div
+                                                        className={cx('tippy-box', 'arrow-left')}
+                                                        tabIndex="-1"
+                                                        {...attrs}
+                                                    >
+                                                        Track show
+                                                    </div>
+                                                )}
+                                            >
                                                 <div className={cx('action-top__icon')}>
-                                                    <SeenIcon />
+                                                    <FontAwesomeIcon icon={faBookmark} />
                                                 </div>
-                                            ) : (
-                                                <></>
-                                            )}
-                                            <div className={cx('action-top__icon')}>
-                                                <FontAwesomeIcon icon={faThumbsUp} />
-                                            </div>
-                                            <div className={cx('action-top__icon')}>
-                                                <FontAwesomeIcon icon={faThumbsDown} />
-                                            </div>
+                                            </HeadlessTippy>
+                                            <HeadlessTippy
+                                                placement="bottom"
+                                                render={(attrs) => (
+                                                    <div className={cx('tippy-box')} tabIndex="-1" {...attrs}>
+                                                        Seen
+                                                    </div>
+                                                )}
+                                            >
+                                                {filmItem.isSeen ? (
+                                                    <div className={cx('action-top__icon')}>
+                                                        <SeenIcon />
+                                                    </div>
+                                                ) : (
+                                                    <></>
+                                                )}
+                                            </HeadlessTippy>
+                                            <HeadlessTippy
+                                                placement="bottom"
+                                                render={(attrs) => (
+                                                    <div className={cx('tippy-box')} tabIndex="-1" {...attrs}>
+                                                        Like
+                                                    </div>
+                                                )}
+                                            >
+                                                <div className={cx('action-top__icon')}>
+                                                    <FontAwesomeIcon icon={faThumbsUp} />
+                                                </div>
+                                            </HeadlessTippy>
+                                            <HeadlessTippy
+                                                placement="bottom-end"
+                                                render={(attrs) => (
+                                                    <div
+                                                        className={cx('tippy-box', 'arrow-right')}
+                                                        tabIndex="-1"
+                                                        {...attrs}
+                                                    >
+                                                        Dislike
+                                                    </div>
+                                                )}
+                                            >
+                                                <div className={cx('action-top__icon')}>
+                                                    <FontAwesomeIcon icon={faThumbsDown} />
+                                                </div>
+                                            </HeadlessTippy>
                                         </div>
                                         <div className={cx('action-bottom')}>
                                             <div className={cx('imdb-more')}>
@@ -98,7 +146,7 @@ function Category() {
                                                 <div className={cx('more-like-this')}>More like this..</div>
                                             </div>
                                             <button className={cx('watch-now')}>
-                                                <img src={images.watchNowLogo} alt="" />
+                                                <img src={filmItem.provideImage} alt="" />
                                                 Watch now
                                             </button>
                                         </div>

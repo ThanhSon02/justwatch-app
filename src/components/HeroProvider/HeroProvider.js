@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './HeroProvider.module.scss';
 import images from '~/assets/img';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useRef, useState } from 'react';
@@ -56,7 +57,7 @@ function HeroProvider({ small = false }) {
             >
                 {providers.map((provider, index) => (
                     <li key={index} className={cx('provider-item', { small })}>
-                        <img src={provider.image} alt={provider.alt} />
+                        <img src={provider.image} alt={provider.alt} title={provider.alt} />
                     </li>
                 ))}
                 <li className={cx('provider-item', { small })}>
